@@ -1,9 +1,12 @@
 .main {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
+}
+.line {
+  display: flex;
 }
 .square {
-  border: 5px solid black;
+  border: 1px solid black;
   height: 20px;
   width: 20px;
 }
