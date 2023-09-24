@@ -13,6 +13,14 @@ function etchASketch() {
     }
 }
 
+//TODO: figure out why doodle isn't working how I think it's supposed to. 
+// classList? maybe I have to add a whole nother div?
+// 2do'ing this so I don't forget what I wanted to unpick tomorrow
+
+function doodle() {
+    document.querySelector('.square').classList.add('hovered')
+}
+
 etchASketch()
 
-document.querySelector('.square').addEventListener("MouseEvent(mouseover)", () => { square.classList.add('hovered'); })
+document.querySelector('.square').addEventListener('mouseover', () => { doodle(); })

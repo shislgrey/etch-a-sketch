@@ -12,3 +12,6 @@
   min-height: 5px;
   min-width: 5px;
 }
+.hovered {
+  fill: black;
+}
