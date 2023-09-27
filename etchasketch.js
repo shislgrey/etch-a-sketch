@@ -17,7 +17,9 @@ function generateGrid() {
             let square = document.createElement('div')
             square.classList.add('square')
             line.appendChild(square)
-            square.addEventListener('mouseover', () => { updateColor(); })
+            let squares = Array.from(document.querySelectorAll('.square'))
+            squares.forEach((square) => { addEventListener('mouseover', updateColor(square)); })
+            // square.addEventListener('mouseover', () => { updateColor(); })
         }
         document.querySelector(".main").appendChild(line)
     }
@@ -26,11 +28,11 @@ function generateGrid() {
 // classList? maybe I have to add a whole nother div?
 // 2do'ing this so I don't forget what I wanted to unpick tomorrow
 
-function updateColor() {
-    document.querySelector('.square').classList.add('hovered')
+function updateColor(div) {
+    div.style.backgroundColor = 0o0
 }
 
 generateGrid()
 
-// var squares = document.querySelectorAll('.square')
-// squares.forEach((square) => { addEventListener('mouseover', () => { updateColor(); }); })
+// let squares = Array.from(document.querySelectorAll('.square'))
+// squares.forEach((square) => { addEventListener('mouseover', updateColor(square)); })
