@@ -9,6 +9,7 @@
 
 let size = 16
 
+
 function generateGrid() {
     for (let column = 0; column < size; column++) {
         var line = document.createElement('div')
@@ -16,10 +17,8 @@ function generateGrid() {
         for (let row = 0; row < size; row++) {
             let square = document.createElement('div')
             square.classList.add('square')
+            square.addEventListener('mouseover', function () { updateColor(square) })
             line.appendChild(square)
-            let squares = Array.from(document.querySelectorAll('.square'))
-            squares.forEach((square) => { addEventListener('mouseover', updateColor(square)); })
-            // square.addEventListener('mouseover', () => { updateColor(); })
         }
         document.querySelector(".main").appendChild(line)
     }
@@ -28,11 +27,9 @@ function generateGrid() {
 // classList? maybe I have to add a whole nother div?
 // 2do'ing this so I don't forget what I wanted to unpick tomorrow
 
-function updateColor(div) {
-    div.style.backgroundColor = 0o0
+function updateColor(square) {
+    square.classList.add('hovered')
 }
 
 generateGrid()
 
-// let squares = Array.from(document.querySelectorAll('.square'))
-// squares.forEach((square) => { addEventListener('mouseover', updateColor(square)); })
